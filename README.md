@@ -27,7 +27,9 @@ NAME : SUDEEP RAJ C R
 REG  : 212224040333
 
 import pandas as pd
+
 df=pd.read_csv("/content/SAMPLEIDS.csv")
+
 df
 
 <img width="1018" height="864" alt="Screenshot 2025-08-26 173240" src="https://github.com/user-attachments/assets/72461a54-1a03-4c7b-9090-7d134344d4c7" />
@@ -85,6 +87,7 @@ df.fillna({'GENDER': 'MALE','ADDRESS':'LADAKH','M1': '100','M2': '200', 'M3': '3
 <img width="1014" height="877" alt="Screenshot 2025-08-26 174755" src="https://github.com/user-attachments/assets/d544ecda-30e4-47b3-ad8d-af7f585ae843" />
 
 ir=pd.read_csv('/content/iris.csv')
+
 ir
 
 <img width="969" height="693" alt="Screenshot 2025-08-26 174845" src="https://github.com/user-attachments/assets/c97a5b01-ad22-4c75-b7f6-0d18fbc24ab1" />
@@ -94,31 +97,41 @@ ir.describe()
 <img width="945" height="681" alt="Screenshot 2025-08-26 174925" src="https://github.com/user-attachments/assets/f8a9ba22-1573-461d-b8c9-c1e7bd1e14d7" />
 
 import seaborn as sns
+
 sns.boxplot(x='sepal_width',data=ir)
 
 <img width="703" height="646" alt="Screenshot 2025-08-26 175018" src="https://github.com/user-attachments/assets/5bbc5f19-06cd-4803-8ae8-661f00ea59fe" />
 
 ir=pd.read_csv('/content/iris.csv')
+
 q1=ir.sepal_width.quantile(0.25)
+
 q3=ir.sepal_width.quantile(0.75)
+
 iqr=q3-q1
+
 print(iqr)
 
 <img width="747" height="81" alt="Screenshot 2025-08-26 175133" src="https://github.com/user-attachments/assets/c3d66305-4bfd-4524-8404-9307def05493" />
 
 upper = q3+1.5*iqr
+
 lower = q1-1.5*iqr
+
 print(upper)
+
 print(lower)
 
 <img width="707" height="67" alt="Screenshot 2025-08-26 175253" src="https://github.com/user-attachments/assets/d153034d-d389-4881-9303-29fd6fecbcb1" />
 
 rid=ir[((ir.sepal_width<(q1-1.5*iqr))|(ir.sepal_width>(q3+1.5*iqr)))]
+
 rid['sepal_width']
 
 <img width="614" height="445" alt="Screenshot 2025-08-26 175353" src="https://github.com/user-attachments/assets/65fead09-09d9-480c-ba53-30e1b97e9676" />
 
 delid=ir[~((ir.sepal_width<(q1-1.5*iqr))|(ir.sepal_width>(q3+1.5*iqr)))]
+
 delid
 
 <img width="801" height="562" alt="Screenshot 2025-08-26 175439" src="https://github.com/user-attachments/assets/a579a024-8de5-4e83-a12e-151175cddd61" />
@@ -128,8 +141,11 @@ sns.boxplot(x='sepal_width',data=delid)
 <img width="695" height="612" alt="Screenshot 2025-08-26 175523" src="https://github.com/user-attachments/assets/eda788ad-2be8-483c-b6d4-ad0fefb7bb9f" />
 
 import numpy as np
+
 import scipy.stats as stats
+
 z=np.abs(stats.zscore(ir['sepal_width']))
+
 z
 
 <img width="764" height="740" alt="Screenshot 2025-08-26 175609" src="https://github.com/user-attachments/assets/7df2bfe8-9ade-4800-87cc-9662caf4addb" />
