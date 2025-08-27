@@ -150,6 +150,10 @@ z
 
 <img width="764" height="740" alt="Screenshot 2025-08-26 175609" src="https://github.com/user-attachments/assets/7df2bfe8-9ade-4800-87cc-9662caf4addb" />
 
+ir1 = ir[z<3]
+
+<img width="728" height="529" alt="Screenshot 2025-08-27 124958" src="https://github.com/user-attachments/assets/40addc56-e89e-443e-89bb-3b67fe4f37be" />
+
 # Result
 
 Thus we have cleaned the data and removed the outliers by detection using IQR and Z-score
